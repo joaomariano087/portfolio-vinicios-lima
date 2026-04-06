@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Efeito de revelação (fade in)
 const observarScroll = () => {
+    const elementos = document.querySelectorAll('.about, .card');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -39,13 +40,12 @@ const observarScroll = () => {
         });
     }, { threshold: 0.1 });
 
-    const sectionSobre = document.querySelector('.about');
-
-    sectionSobre.style.opacity = "0";
-    sectionSobre.style.transform = "translateY(30px)";
-    sectionSobre.style.transition = "all 0.8s ease-out";
-
-    observer.observe(sectionSobre);
+    elementos.forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease";
+        observer.observe(el);
+    });
 };
 
 observarScroll();

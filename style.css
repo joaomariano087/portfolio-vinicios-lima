@@ -183,3 +183,14 @@ footer{
     justify-content:center;
   }
 }
+
+/* CORRIGIR LINK AZUL NO MOBILE */
+a[href^="tel"] {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* PADRÃO LINKS */
+a {
+  text-decoration: none;
+}
